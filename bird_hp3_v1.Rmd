@@ -55,6 +55,10 @@ hp3_virus<-distinct(hp3_virus)
 hp3_virus_updated<-full_join(hp3_virus, bird_viruses_ictv_2009_v_2015, by = "ICTV_2009_Species")
 ```
 
+```{r reordering new hp3_virus_updated, echo=FALSE}
+hp3_virus_updated<-select(hp3_virus_updated, old_vOrder, old_vFamily, old_vFam_Pubs, old_vGenus, Virus_Species, Name_in_Paper, ICTV_2009_Species, Code, Count, Jones, old_vPubs, ICTV_2015_Order, ICTV_2015_Family, ICTV_2015_Subfamily, ICTV_2015_Genus, ICTV_2015_Species, Genome_length:Notes)
+```
+
 ## Including Plots
 
 You can also embed plots, for example:
