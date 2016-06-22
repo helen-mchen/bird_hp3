@@ -47,8 +47,13 @@ hp3_virus_updated<-full_join(hp3_virus, bird_viruses_ictv_2009_v_2015, by = "ICT
 ```
 
 had to correct for typos and rerun code. reran as following:
-
-
+```{r from bird_hp3_virus.csv to merged virus dataframe, echo=FALSE}
+hp3_virus<-select(bird_hp3_virus, Virus_Order:Jones)
+hp3_virus<-rename(hp3_virus, old_vOrder=Virus_Order)
+hp3_virus<-rename(hp3_virus, old_vFamily=Virus_Family, old_vFam_Pubs=virfam_pubs, old_vGenus=Virus_Genus, old_vPubs=Vir_pubs)
+hp3_virus<-distinct(hp3_virus)
+hp3_virus_updated<-full_join(hp3_virus, bird_viruses_ictv_2009_v_2015, by = "ICTV_2009_Species")
+```
 
 ## Including Plots
 
